@@ -6,8 +6,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637831068312931005
-    m_Hash: 1641546182
+      ticks: 637831088213008793
+    m_Hash: 4070978512
   m_LockFileStatus:
     m_FilePath: E:/Uni/Year 2/Block 3 Plastic Waste Project/Block-3-4-Plastic-Waste-Game/Plastic
       Waste Awareness Game/Packages/packages-lock.json
@@ -15,8 +15,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637831068360650274
-    m_Hash: 1049041275
+      ticks: 637831088213018807
+    m_Hash: 2142867407
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
