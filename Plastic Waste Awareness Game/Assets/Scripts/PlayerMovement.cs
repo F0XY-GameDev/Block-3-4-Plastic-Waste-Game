@@ -5,41 +5,64 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")]
+    [Header("Movement Speed")]
+
     public float moveSpeed;
     public float maxMoveSpeed;
 
+    [Header("Anti-Normal Forces")]
+
     public float groundDrag;
-    public float groundDragConst;
+    public float groundDragConst;    
+    public float gravity;
+
+    [Header("Air/Slide Movement-Freedom")]
+
+    public float airMultiplier;
+    public float slideMultiplier;
+
+    [Header("Jump Modifiers")]
 
     public float jumpForce;
     public float jumpForceForward;
-    public float doubleJumpForce;
-    public float slideForceDown;
-    public float slideForceForward;
     public float jumpCooldown;
-    public float doubleJumpCooldown;
-    public float slideCooldown;
-    public float airMultiplier;   
-    public float slideMultiplier;
-    public float gravity;
+    public float doubleJumpForce;
     public bool readyToJump;
     public bool readyToDoubleJump;
+    public float doubleJumpCooldown;
+
+    [Header("Super Jump Modifiers")]
+
+    public float superJumpForce;
+    public float superJumpCooldown;
+    public bool readyToSuperJump;
+
+    [Header("Slide Modifiers")]
+
+    public float slideForceDown;
+    public float slideForceForward;    
+    public float slideCooldown;
+    public bool sliding;
     public bool readyToSlide;
 
-    public Text speedText;
-    bool sliding;
+    [Header("GameObjects")]
 
-    [Header("Keybinds")]    
+    public Transform orientation;
+    public Text speedText;
+
+    [Header("Keybinds")]
+
+    public KeyCode superJumpKey = KeyCode.E;
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode slideKey = KeyCode.LeftControl;
 
     [Header("Ground Check")]
+
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool grounded;
+    public bool grounded;
 
-    public Transform orientation;
+    
 
     float horizontalInput;
     float verticalInput;
@@ -121,6 +144,16 @@ public class PlayerMovement : MonoBehaviour
             Slide();
 
             Invoke(nameof(ResetSlide), slideCooldown);
+        }
+
+        // when to super jump
+        if(Input.GetKeyDown(superJumpKey) && readyToSuperJump && grounded)
+        {
+            readyToSuperJump = false;
+
+            SuperJump();
+
+            Invoke(nameof(ResetSuperJump), superJumpCooldown);
         }
     }
     
@@ -207,5 +240,17 @@ public class PlayerMovement : MonoBehaviour
     private void SlideOffCooldown()
     {
         readyToSlide = true;
+    }
+
+    private void SuperJump()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.AddForce(Vector3.up * superJumpForce, ForceMode.Impulse);
+
+    }
+
+    private void ResetSuperJump()
+    {
+        readyToSuperJump = true;
     }
 }
