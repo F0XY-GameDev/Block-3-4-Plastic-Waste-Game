@@ -85,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else groundDrag = groundDragConst;
 
+        
+
 
         speedText.text = "Speed:" + Mathf.Sqrt(Mathf.Pow(rb.velocity.x, 2f) + Mathf.Pow(rb.velocity.z, 2f)); 
         //ground check
@@ -116,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump 
-        if (Input.GetKeyDown(jumpKey) && readyToJump)
+        if (Input.GetKeyDown(jumpKey))
         {
             if (Input.GetKey(jumpKey) && readyToDoubleJump && !grounded)
             {
@@ -126,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
 
                 Invoke(nameof(ResetDoubleJump), doubleJumpCooldown);
             }
-            else if (Input.GetKey(jumpKey) && readyToJump && grounded)
+            if (Input.GetKey(jumpKey) && readyToJump && grounded)
             {
                 readyToJump = false;
 
