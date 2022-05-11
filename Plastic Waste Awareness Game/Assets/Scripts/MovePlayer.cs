@@ -17,7 +17,7 @@ public class MovePlayer : MonoBehaviour
     private CharacterController controller;
 
     private Vector2 movement;
-    private Vector2 aim;
+    
     private Vector3 playerVelocity;
 
     private PlayerControlls playerControlls;
@@ -46,13 +46,12 @@ public class MovePlayer : MonoBehaviour
     {
         HandleInput();
         HandleMovement();
-        HandleRotation();
+       
     }
 
     void HandleInput()
     {
         movement = playerControlls.Controlls.Movement.ReadValue<Vector2>();
-        aim = playerControlls.Controlls.Aim.ReadValue<Vector2>();
     }
 
     void HandleMovement()
@@ -61,9 +60,6 @@ public class MovePlayer : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
     }
 
-    void HandleRotation()
-    {
-
-    }
+   
 }
 

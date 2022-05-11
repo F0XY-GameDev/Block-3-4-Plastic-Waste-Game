@@ -37,10 +37,19 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Aim"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""3416f776-4765-498d-9a29-ef51aae0da34"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""Talk"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c4bd6ed-bf1b-4d29-9d63-621bb4ea5107"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2c945db-874f-4265-92f9-a0270b015c78"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -60,12 +69,23 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""07d762e1-ad32-4250-903c-21a1e0a280c2"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""id"": ""c937496f-5afe-4b67-8896-7cb21fac6cd5"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
-                    ""action"": ""Aim"",
+                    ""action"": ""Talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad342f34-01c2-47b8-bd3f-15aa8f0b44c8"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -89,7 +109,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         // Controlls
         m_Controlls = asset.FindActionMap("Controlls", throwIfNotFound: true);
         m_Controlls_Movement = m_Controlls.FindAction("Movement", throwIfNotFound: true);
-        m_Controlls_Aim = m_Controlls.FindAction("Aim", throwIfNotFound: true);
+        m_Controlls_Talk = m_Controlls.FindAction("Talk", throwIfNotFound: true);
+        m_Controlls_Crouch = m_Controlls.FindAction("Crouch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -150,13 +171,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Controlls;
     private IControllsActions m_ControllsActionsCallbackInterface;
     private readonly InputAction m_Controlls_Movement;
-    private readonly InputAction m_Controlls_Aim;
+    private readonly InputAction m_Controlls_Talk;
+    private readonly InputAction m_Controlls_Crouch;
     public struct ControllsActions
     {
         private @PlayerControlls m_Wrapper;
         public ControllsActions(@PlayerControlls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Controlls_Movement;
-        public InputAction @Aim => m_Wrapper.m_Controlls_Aim;
+        public InputAction @Talk => m_Wrapper.m_Controlls_Talk;
+        public InputAction @Crouch => m_Wrapper.m_Controlls_Crouch;
         public InputActionMap Get() { return m_Wrapper.m_Controlls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -169,9 +192,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Movement.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnMovement;
-                @Aim.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnAim;
-                @Aim.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnAim;
-                @Aim.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnAim;
+                @Talk.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnTalk;
+                @Talk.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnTalk;
+                @Talk.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnTalk;
+                @Crouch.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCrouch;
             }
             m_Wrapper.m_ControllsActionsCallbackInterface = instance;
             if (instance != null)
@@ -179,9 +205,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @Aim.started += instance.OnAim;
-                @Aim.performed += instance.OnAim;
-                @Aim.canceled += instance.OnAim;
+                @Talk.started += instance.OnTalk;
+                @Talk.performed += instance.OnTalk;
+                @Talk.canceled += instance.OnTalk;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
             }
         }
     }
@@ -198,6 +227,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     public interface IControllsActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnAim(InputAction.CallbackContext context);
+        void OnTalk(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
     }
 }

@@ -15,10 +15,19 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Aim",
-                    "type": "PassThrough",
-                    "id": "3416f776-4765-498d-9a29-ef51aae0da34",
-                    "expectedControlType": "Vector2",
+                    "name": "Talk",
+                    "type": "Button",
+                    "id": "8c4bd6ed-bf1b-4d29-9d63-621bb4ea5107",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "d2c945db-874f-4265-92f9-a0270b015c78",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -38,12 +47,23 @@
                 },
                 {
                     "name": "",
-                    "id": "07d762e1-ad32-4250-903c-21a1e0a280c2",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "c937496f-5afe-4b67-8896-7cb21fac6cd5",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "Aim",
+                    "action": "Talk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad342f34-01c2-47b8-bd3f-15aa8f0b44c8",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
