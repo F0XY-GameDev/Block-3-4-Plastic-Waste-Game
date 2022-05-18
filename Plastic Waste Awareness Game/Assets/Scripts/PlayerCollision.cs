@@ -11,6 +11,7 @@ public class PlayerCollision : MonoBehaviour
        {
            movement.enabled = false;
            PlayerManager.gameOver = true;//game over screen
+           
        }
    }
 }
