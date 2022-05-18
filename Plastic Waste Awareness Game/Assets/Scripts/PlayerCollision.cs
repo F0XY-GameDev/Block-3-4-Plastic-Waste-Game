@@ -10,6 +10,7 @@ public class PlayerCollision : MonoBehaviour
        if (collisionInfo.collider.name == "Chaser")
        {
            movement.enabled = false;
+           PlayerManager.gameOver = true;//game over screen
        }
    }
 }
