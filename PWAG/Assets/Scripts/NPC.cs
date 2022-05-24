@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class NPC : MonoBehaviour
 {
+    [SerializeField]
+    private int speechCD;
     public Transform ChatBubble;//UI picture reference
     public Transform NPCharacter; //NPC reference
 
@@ -28,6 +30,11 @@ public class NPC : MonoBehaviour
        Vector3 Pos = Camera.main.WorldToScreenPoint(NPCharacter.position);
        Pos.y += 120;//position above the NPC
        ChatBubble.position = Pos; 
+       if (speechCD <= 0)
+       {
+           speechCD = 0;
+       }
+       speechCD --;
     }
     
      
@@ -36,13 +43,14 @@ public class NPC : MonoBehaviour
         //if the player is within the (capsule collider) range
         this.gameObject.GetComponent<NPC>().enabled = true;
         FindObjectOfType<DIalogueSystem>().EnterRangeOfNPC();        
-        if ((other.gameObject.tag == "Player") && Input.GetKeyDown("joystick button 0"))
+        if ((other.gameObject.tag == "Player") && Input.GetKeyDown("joystick button 0") && speechCD <=5)
             {
                 this.gameObject.GetComponent<NPC>().enabled = true;//activating the NPC script
                 dIalogueSystem.Names = Name;
                 dIalogueSystem.dialogueLines = sentences;
                 FindObjectOfType<DIalogueSystem>().NPCName();
                 Debug.Log("phase 2 complete");
+                speechCD = 60;
             }
     }
 

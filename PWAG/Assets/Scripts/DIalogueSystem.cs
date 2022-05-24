@@ -48,7 +48,7 @@ public class DIalogueSystem : MonoBehaviour
         outOfRange = false;
         dialogueBoxUi.gameObject.SetActive(true);
         nameText.text = Names;
-        if(Input.GetKey("joystick button 0"))
+        if(Input.GetKeyDown("joystick button 0"))
             {
                 if(!dialogueActive)
                     {
