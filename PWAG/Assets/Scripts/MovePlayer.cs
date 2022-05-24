@@ -47,20 +47,23 @@ public class MovePlayer : MonoBehaviour
 
     void Update()
     {
-        inventoryCooldown --;
+        inventoryCooldown --; //inventoryCooldown exists to circumvent a bug that causes our inventory activation button to call the function for inventory once per update
         if (inventoryCooldown <= 0)
         {
             inventoryCooldown = 0;
         }
+
+
         HandleInput();
         HandleMovement();
 
         
-        if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1 && inventoryOn && inventoryCooldown == 0)
+
+        if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1 && inventoryOn && inventoryCooldown == 0) //if button defined by playerControlls is pressed and inventory open
         {
             CloseInventory();
         }
-        if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1 && !inventoryOn && inventoryCooldown == 0)
+        if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1 && !inventoryOn && inventoryCooldown == 0) //if button defined by playerControlls is pressed and inventory closed
         {
             OpenInventory();
         }        
@@ -81,7 +84,7 @@ public class MovePlayer : MonoBehaviour
     {
         inventoryToShow.SetActive(true);
         inventoryOn = true;
-        inventoryCooldown = 300;        
+        inventoryCooldown = 300;
     }
 
     private void CloseInventory()

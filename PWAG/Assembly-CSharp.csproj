@@ -73,9 +73,10 @@
     <Compile Include="Assets\Scripts\MovePlayer.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\DefaultObject.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\InvMoveCursor.cs" />
     <Compile Include="Assets\Scripts\Events.cs" />
     <Compile Include="Assets\Scripts\PlayerCollision.cs" />
-    <Compile Include="Assets\Scripts\InvMoveCursor.cs" />
+    <Compile Include="Assets\Scriptable Objects\Items\Scripts\ThrowableObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

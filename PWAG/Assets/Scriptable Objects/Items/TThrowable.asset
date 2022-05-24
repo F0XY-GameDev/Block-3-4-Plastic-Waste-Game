@@ -9,15 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef3667ad5fc4caf4d98fe5fba924c5f8, type: 3}
-  m_Name: TEquipable
+  m_Script: {fileID: 11500000, guid: b66f39d58a6566f4db519fb6f49f63a2, type: 3}
+  m_Name: TThrowable
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6458094753795074492, guid: 4ef5f8cc15a8ce744a0b89cfc70dae1d, type: 3}
-  type: 2
+  prefab: {fileID: 6746417801284897904, guid: 0e1e21a5e35b5444f9d45c3a2dc85434, type: 3}
+  type: 3
   description: 
   canRead: 0
-  canThrow: 0
+  canThrow: 1
   canEquip: 1
   effectID1: 0
-  effectID2: 0
-  effectID3: 0
+  throwDistance: 0

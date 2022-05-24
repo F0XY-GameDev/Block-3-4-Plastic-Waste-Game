@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6458094753795074494}
   - component: {fileID: -2000677151332213373}
   m_Layer: 5
-  m_Name: Image
+  m_Name: EquipableInvImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
