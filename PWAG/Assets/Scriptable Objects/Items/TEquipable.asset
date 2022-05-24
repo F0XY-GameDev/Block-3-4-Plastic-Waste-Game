@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3667ad5fc4caf4d98fe5fba924c5f8, type: 3}
+  m_Name: TEquipable
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6458094753795074492, guid: 4ef5f8cc15a8ce744a0b89cfc70dae1d, type: 3}
+  type: 2
+  description: 
+  canRead: 0
+  effectID1: 0
+  effectID2: 0
+  effectID3: 0

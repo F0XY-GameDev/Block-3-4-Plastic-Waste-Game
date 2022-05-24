@@ -13,11 +13,14 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private float Gamepadrotatesmoothing = 1000f;
 
     [SerializeField] private bool isGamepad;
+    public GameObject inventoryToShow;
+    [SerializeField] private bool inventoryOn;
+    [SerializeField] private int inventoryCooldown;
 
     private CharacterController controller;
 
     private Vector2 movement;
-    
+
     private Vector3 playerVelocity;
 
     private PlayerControlls playerControlls;
@@ -44,10 +47,24 @@ public class MovePlayer : MonoBehaviour
 
     void Update()
     {
+        inventoryCooldown --;
+        if (inventoryCooldown <= 0)
+        {
+            inventoryCooldown = 0;
+        }
         HandleInput();
         HandleMovement();
-       
-    }
+
+        
+        if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1 && inventoryOn && inventoryCooldown == 0)
+        {
+            CloseInventory();
+        }
+        if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1 && !inventoryOn && inventoryCooldown == 0)
+        {
+            OpenInventory();
+        }        
+    }    
 
     void HandleInput()
     {
@@ -60,6 +77,18 @@ public class MovePlayer : MonoBehaviour
         controller.Move(move * Time.deltaTime * playerSpeed);
     }
 
-   
+    private void OpenInventory()
+    {
+        inventoryToShow.SetActive(true);
+        inventoryOn = true;
+        inventoryCooldown = 300;        
+    }
+
+    private void CloseInventory()
+    {        
+        inventoryOn = false;
+        inventoryToShow.SetActive(false);
+        inventoryCooldown = 300;
+    }
 }
 

@@ -53,6 +53,24 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""a6240f98-70be-4127-845b-ae33e1317d74"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cursor"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""d5179580-49a1-4a79-8107-505337227444"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +106,28 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c342a8ad-54fd-40da-ab62-d13530655222"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e0f155b-e7e6-468e-beda-620aaac7d9d4"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -111,6 +151,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_Controlls_Movement = m_Controlls.FindAction("Movement", throwIfNotFound: true);
         m_Controlls_Talk = m_Controlls.FindAction("Talk", throwIfNotFound: true);
         m_Controlls_Crouch = m_Controlls.FindAction("Crouch", throwIfNotFound: true);
+        m_Controlls_Inventory = m_Controlls.FindAction("Inventory", throwIfNotFound: true);
+        m_Controlls_Cursor = m_Controlls.FindAction("Cursor", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -173,6 +215,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Controlls_Movement;
     private readonly InputAction m_Controlls_Talk;
     private readonly InputAction m_Controlls_Crouch;
+    private readonly InputAction m_Controlls_Inventory;
+    private readonly InputAction m_Controlls_Cursor;
     public struct ControllsActions
     {
         private @PlayerControlls m_Wrapper;
@@ -180,6 +224,8 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Controlls_Movement;
         public InputAction @Talk => m_Wrapper.m_Controlls_Talk;
         public InputAction @Crouch => m_Wrapper.m_Controlls_Crouch;
+        public InputAction @Inventory => m_Wrapper.m_Controlls_Inventory;
+        public InputAction @Cursor => m_Wrapper.m_Controlls_Cursor;
         public InputActionMap Get() { return m_Wrapper.m_Controlls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -198,6 +244,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Crouch.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCrouch;
                 @Crouch.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCrouch;
                 @Crouch.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCrouch;
+                @Inventory.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnInventory;
+                @Cursor.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCursor;
+                @Cursor.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCursor;
+                @Cursor.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCursor;
             }
             m_Wrapper.m_ControllsActionsCallbackInterface = instance;
             if (instance != null)
@@ -211,6 +263,12 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Crouch.started += instance.OnCrouch;
                 @Crouch.performed += instance.OnCrouch;
                 @Crouch.canceled += instance.OnCrouch;
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
+                @Cursor.started += instance.OnCursor;
+                @Cursor.performed += instance.OnCursor;
+                @Cursor.canceled += instance.OnCursor;
             }
         }
     }
@@ -229,5 +287,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnTalk(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
+        void OnInventory(InputAction.CallbackContext context);
+        void OnCursor(InputAction.CallbackContext context);
     }
 }

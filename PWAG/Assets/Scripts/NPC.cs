@@ -35,13 +35,14 @@ public class NPC : MonoBehaviour
     {
         //if the player is within the (capsule collider) range
         this.gameObject.GetComponent<NPC>().enabled = true;
-        FindObjectOfType<DIalogueSystem>().EnterRangeOfNPC();
+        FindObjectOfType<DIalogueSystem>().EnterRangeOfNPC();        
         if ((other.gameObject.tag == "Player") && Input.GetKeyDown("joystick button 0"))
             {
                 this.gameObject.GetComponent<NPC>().enabled = true;//activating the NPC script
                 dIalogueSystem.Names = Name;
                 dIalogueSystem.dialogueLines = sentences;
                 FindObjectOfType<DIalogueSystem>().NPCName();
+                Debug.Log("phase 2 complete");
             }
     }
 
