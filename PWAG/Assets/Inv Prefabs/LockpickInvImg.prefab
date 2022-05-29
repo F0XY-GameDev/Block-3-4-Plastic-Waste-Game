@@ -37,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 721591706090697684, guid: 6c76c862497f866468fd71e69eb511e0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 54.153
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 721591706090697684, guid: 6c76c862497f866468fd71e69eb511e0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 54.1529
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 721591706090697684, guid: 6c76c862497f866468fd71e69eb511e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 721591706090697685, guid: 6c76c862497f866468fd71e69eb511e0, type: 3}
       propertyPath: m_Name
-      value: Image Variant 2
+      value: LockpickInvImg
       objectReference: {fileID: 0}
     - target: {fileID: 721591706090697687, guid: 6c76c862497f866468fd71e69eb511e0, type: 3}
       propertyPath: m_Color.b

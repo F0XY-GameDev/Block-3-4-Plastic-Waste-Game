@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6458094753795074492, guid: 4ef5f8cc15a8ce744a0b89cfc70dae1d, type: 3}
       propertyPath: m_Name
-      value: Image
+      value: ThrowableInvImg
       objectReference: {fileID: 0}
     - target: {fileID: 6458094753795074493, guid: 4ef5f8cc15a8ce744a0b89cfc70dae1d, type: 3}
       propertyPath: m_Pivot.x
@@ -41,11 +41,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6458094753795074493, guid: 4ef5f8cc15a8ce744a0b89cfc70dae1d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 54.153
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 6458094753795074493, guid: 4ef5f8cc15a8ce744a0b89cfc70dae1d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 54.1529
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 6458094753795074493, guid: 4ef5f8cc15a8ce744a0b89cfc70dae1d, type: 3}
       propertyPath: m_LocalPosition.x
