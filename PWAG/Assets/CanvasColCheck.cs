@@ -9,19 +9,4 @@ public class CanvasColCheck : MonoBehaviour
     //this script will pass through the values of the invSlot we are colliding with 
     //this will also only happen if the invSlot has an item at all.
     public GameObject cursor;
-    public GameObject invSlot1;
-    public GameObject invSlot2;
-    public GameObject invSlot3;
-    public GameObject invSlot4;
-    public GameObject invSlot5;
-    public GameObject invSlot6;
-    public GameObject invSlot7;
-    public GameObject invSlot8;
-    public GameObject invSlot9;
-    public GameObject invSlot10;
-    public GameObject invSlot11;
-    public GameObject invSlot12;
-    
-
-
 }

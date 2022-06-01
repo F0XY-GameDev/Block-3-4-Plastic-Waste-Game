@@ -33,8 +33,8 @@ public class DisplayInventory : MonoBehaviour
             }
             else
             {
-                var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform); //create inventory object from prefab
-                obj.GetComponent<RectTransform>().localPosition = GetPosition(i); //set location based on Vector3 GetPosition below
+                var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform); //create inventory object from prefab                
+                obj.GetComponent<RectTransform>().localPosition = GetPosition(i); //set location based on Vector3 GetPosition below               
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0"); //set text from prefab to amount of item held as string
                 itemsDisplayed.Add(inventory.Container[i], obj); //add item displayed to itemsDisplayed Dictionary (prevents re-rendering already rendered items)
             }

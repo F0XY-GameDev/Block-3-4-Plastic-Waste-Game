@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6458094753795074492, guid: 4ef5f8cc15a8ce744a0b89cfc70dae1d, type: 3}
   type: 2
-  description: 
+  description: This is an equipable... sort of.
   canRead: 0
   canThrow: 0
   canEquip: 1

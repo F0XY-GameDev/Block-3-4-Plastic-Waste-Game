@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ca069cdc0bd074da7d37f6ff0438b5, type: 3}
   m_Name: TLockpick
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9115823624750070970, guid: d76ccf0c45b89aa4988435a56d7ac4e2, type: 3}
-  type: 3
-  description: A placeholder for when we have items.
+  prefab: {fileID: 1065881120665554245, guid: a148e55acce904b499ea2d888d2e6271, type: 3}
+  type: 4
+  description: This could be a lockpick at some point.
   canRead: 0
+  canThrow: 0
+  canEquip: 0

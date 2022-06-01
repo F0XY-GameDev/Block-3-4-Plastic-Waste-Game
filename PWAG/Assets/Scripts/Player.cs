@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
-    public InventoryObject inventory;
+    public InventoryObject inventory;    
 
     public void OnTriggerEnter(Collider other)
     {
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
         if (item)
         {
             inventory.AddItem(item.item, 1);
-            Destroy(other.gameObject);
+            Destroy(other.gameObject);            
         }
     }
     private void OnApplicationQuit()

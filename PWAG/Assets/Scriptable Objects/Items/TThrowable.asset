@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66f39d58a6566f4db519fb6f49f63a2, type: 3}
   m_Name: TThrowable
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6746417801284897904, guid: 0e1e21a5e35b5444f9d45c3a2dc85434, type: 3}
+  prefab: {fileID: 923864538425471161, guid: f1c9b5acfc4ecd842a39c702826f95f2, type: 3}
   type: 3
-  description: 
+  description: This could be a throwable at some point.
   canRead: 0
   canThrow: 1
   canEquip: 1
