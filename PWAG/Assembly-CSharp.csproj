@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\GamepadCursor.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\ButtonSelect.cs" />
+     <Compile Include="Assets\characterMovement.cs" />
      <Compile Include="Assets\CursorCollision.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemObject.cs" />

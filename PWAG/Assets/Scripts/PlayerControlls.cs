@@ -71,6 +71,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""81e0befb-baa5-49a4-82d9-39dafc357ed6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -79,7 +88,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""id"": ""a9d86eba-a110-4ff7-bcb8-802ef9978346"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""groups"": ""Controller"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
@@ -126,6 +135,17 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Cursor"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd19e7b0-9c12-45cc-a1b8-5533c38efc97"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -707,6 +727,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_Controlls_Crouch = m_Controlls.FindAction("Crouch", throwIfNotFound: true);
         m_Controlls_Inventory = m_Controlls.FindAction("Inventory", throwIfNotFound: true);
         m_Controlls_Cursor = m_Controlls.FindAction("Cursor", throwIfNotFound: true);
+        m_Controlls_Run = m_Controlls.FindAction("Run", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -783,6 +804,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Controlls_Crouch;
     private readonly InputAction m_Controlls_Inventory;
     private readonly InputAction m_Controlls_Cursor;
+    private readonly InputAction m_Controlls_Run;
     public struct ControllsActions
     {
         private @PlayerControlls m_Wrapper;
@@ -792,6 +814,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Controlls_Crouch;
         public InputAction @Inventory => m_Wrapper.m_Controlls_Inventory;
         public InputAction @Cursor => m_Wrapper.m_Controlls_Cursor;
+        public InputAction @Run => m_Wrapper.m_Controlls_Run;
         public InputActionMap Get() { return m_Wrapper.m_Controlls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -816,6 +839,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Cursor.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCursor;
                 @Cursor.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCursor;
                 @Cursor.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnCursor;
+                @Run.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnRun;
+                @Run.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnRun;
+                @Run.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnRun;
             }
             m_Wrapper.m_ControllsActionsCallbackInterface = instance;
             if (instance != null)
@@ -835,6 +861,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Cursor.started += instance.OnCursor;
                 @Cursor.performed += instance.OnCursor;
                 @Cursor.canceled += instance.OnCursor;
+                @Run.started += instance.OnRun;
+                @Run.performed += instance.OnRun;
+                @Run.canceled += instance.OnRun;
             }
         }
     }
@@ -960,6 +989,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnCursor(InputAction.CallbackContext context);
+        void OnRun(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
