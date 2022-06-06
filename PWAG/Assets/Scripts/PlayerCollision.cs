@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public MovePlayer movement;
+    public characterMovement movement;
     void OnCollisionEnter(Collision collisionInfo)
    {
        if (collisionInfo.collider.name == "Chaser")

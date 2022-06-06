@@ -5,8 +5,10 @@ using UnityEngine.AI;
 
 public class Chaser : MonoBehaviour
 {
+    public static event System.Action OnGuardHasSpottedPlayer;
     public float speed = 5;
     public float waitTIme = .3f; 
+    public float timeToSpotPlayer = .5f;
     public Transform pathHolder; //patrol path
     Transform player;
 
@@ -15,6 +17,15 @@ public class Chaser : MonoBehaviour
     public Light spotlight;
     public float viewDistance;
     float viewAngle;
+    float playerVisibleTimer;
+
+    private NavMeshAgent Mob;
+    public GameObject Player;
+    public float MobDistranceRun = 4.0f;
+    
+    public float turnSpeed = 90;
+
+    public LayerMask viewMask;
 
     //Drawing spheres so we can see the path our chaser will take when patroling
     void OnDrawGizmos()
@@ -35,13 +46,6 @@ public class Chaser : MonoBehaviour
         Gizmos.DrawRay (transform.position, transform.forward * viewDistance);
     }
 
-    private NavMeshAgent Mob;
-    public GameObject Player;
-    public float MobDistranceRun = 4.0f;
-    
-    public float turnSpeed = 90;
-
-    public LayerMask viewMask;
     void Start()
     {
         originalSpotlightColor = spotlight.color;
@@ -116,15 +120,26 @@ public class Chaser : MonoBehaviour
     {
         if (CanSeePlayer ())
         {
-            spotlight.color = Color.red;
+            playerVisibleTimer += Time.deltaTime;
         }
         else
         {
-            spotlight.color = originalSpotlightColor;
+            playerVisibleTimer -= Time.deltaTime;
+        }
+        playerVisibleTimer = Mathf.Clamp(playerVisibleTimer, 0, timeToSpotPlayer);
+        spotlight.color = Color.Lerp(originalSpotlightColor, Color.red, playerVisibleTimer/timeToSpotPlayer);
+
+        if (playerVisibleTimer >= timeToSpotPlayer)
+        {
+            if (OnGuardHasSpottedPlayer != null)
+            {
+                OnGuardHasSpottedPlayer();
+            }
         }
         float distance = Vector3.Distance(transform.position, Player.transform.position);
 
         // Run towards player
+
         if (distance < MobDistranceRun)
         {
             Vector3 dirToPlayer = transform.position - Player.transform.position;
