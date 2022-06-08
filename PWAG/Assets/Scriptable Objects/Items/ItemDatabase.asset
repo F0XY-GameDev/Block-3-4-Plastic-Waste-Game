@@ -20,11 +20,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a5ada3a7422b0e4ca94ae5d3779395f, type: 2}
   Descriptions:
   - This is an equipable... sort of.
-  - This is Evidence for testing purposes, this description is also for testing purposes,
-    and the current game developer is also for testing purposes. All purposes must
-    test their purpose, here, at our purpose test! Call 1-800-PURPOSE for you very
-    own, very expensive, FREE CONSULTATION!!! (terms and services apply)
-  - Ok no cool description this is for testing.
+  - 'A folder containing evidence of Omega Corp''s continued disregard for plastic
+    waste management regulations. '
+  - A USB-Drive that holds Evidence of Omega Corp's improper plastic production byproduct
+    disposal.
   - This could be a lockpick at some point.
   - This could be a throwable at some point.
   Names:

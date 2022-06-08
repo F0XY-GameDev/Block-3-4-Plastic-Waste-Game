@@ -22,6 +22,9 @@ public class DIalogueSystem : MonoBehaviour
     public bool dialogueEnded = false;
     public bool outOfRange = true;
 
+    public GameObject NPC;
+    public GameObject gameStateManager;
+
     void Start()
     {
         dialogueText.text = "";
@@ -110,7 +113,7 @@ public class DIalogueSystem : MonoBehaviour
 
                 if(currentCharacterIndex < stringLenght)
                 {
-                    if (Input.GetKey("joystick button 0"))
+                    if (Input.GetKey("joystick button 1"))
                     {
                         yield return new WaitForSeconds(letterDelay * letterMultiplier);
 
@@ -143,7 +146,7 @@ public class DIalogueSystem : MonoBehaviour
     }
 
     public void DropDialogue()
-    {
+    {        
         dialogueUI.SetActive(false);
         dialogueBoxUi.gameObject.SetActive(false);
     }

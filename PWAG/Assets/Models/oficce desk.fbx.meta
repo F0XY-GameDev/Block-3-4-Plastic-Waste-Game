@@ -3,7 +3,22 @@ guid: 0fe1bf1cc6be3394194c51e26d20192a
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 95279625fd4f4874cb012f38212c95b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sandblasted silver metal
+    second: {fileID: 2100000, guid: 97f1205c35e91fc4ca1a2728a25952df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood.001
+    second: {fileID: 2100000, guid: a350ade897f49dc40a78fc3799d129f8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

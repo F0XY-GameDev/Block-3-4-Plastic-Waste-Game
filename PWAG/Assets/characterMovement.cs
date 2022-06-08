@@ -10,7 +10,7 @@ public class characterMovement : MonoBehaviour
     int isWalkingHash;
     int isRunningHash;
 
-    PlayerControlls input;//reference to the Input System script
+    public PlayerControlls input;//reference to the Input System script
 
     Vector2 curentMovement;
     bool movementPressed;

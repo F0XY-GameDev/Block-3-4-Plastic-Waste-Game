@@ -19,35 +19,35 @@ public class CursorCollision : MonoBehaviour
     public TextMeshProUGUI _itemDescription;
     
     // Start is called before the first frame update
-    public void OnControllerColliderHit(Collider2D other)
+    public void OnControllerColliderHit(Collider2D other)  //when cursor collides with other
     {
-        g = other.transform.parent.gameObject;
-        itemID = g.GetComponent<ItemID>().ID;
-        Debug.Log("trigger");
+        g = other.transform.parent.gameObject; //g copies all values of the other gameobject
+        itemID = g.GetComponent<ItemID>().ID; //get itemID of g
+        Debug.Log("trigger"); //idk I needed this at some point
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (itemSprite != null)
+        if (itemSprite != null) //if we have set itemSprite
         {
-            itemImage.sprite = itemSprite;
+            itemImage.sprite = itemSprite; //invdescription image is set to itemSprite
         }
-        if (itemName != null)
+        if (itemName != null) //if we have set itemName
         {
-            _itemName.text = itemName;
+            _itemName.text = itemName; //invdescription name field is set to itemName
         }
-        if (itemDescription != null)
+        if (itemDescription != null) // if we have set itemDescription
         {
-            _itemDescription.text = itemDescription;
-        }        
+            _itemDescription.text = itemDescription; //invdescription text is set to itemDescription
+        }
     }
 
-    public void UpdateInfo(int _itemID)
+    public void UpdateInfo(int _itemID) //to update the info of the invdescription we need to be given an itemID from which we can gather the description, name, and sprite of the object
     {
-        itemID = _itemID;
-        itemDescription = database.GetDescription[itemID];
-        itemName = database.GetName[itemID];
-        itemSprite = database.GetSprite[itemID];
+        itemID = _itemID; //changing the variable set as the parameter can cause issues
+        itemDescription = database.GetDescription[itemID]; //get itemDescription from dictionary
+        itemName = database.GetName[itemID]; //get itemName from dictionary
+        itemSprite = database.GetSprite[itemID]; //get itemSprite from dictionary
     }
 }

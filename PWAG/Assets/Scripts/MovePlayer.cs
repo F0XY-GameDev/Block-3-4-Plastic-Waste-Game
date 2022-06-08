@@ -14,6 +14,7 @@ public class MovePlayer : MonoBehaviour
 
     [SerializeField] private bool isGamepad;
     public GameObject inventoryToShow;
+    public GameObject cursorToShow;
     [SerializeField] private bool inventoryOn;
     [SerializeField] private int inventoryCooldown;
 
@@ -83,6 +84,7 @@ public class MovePlayer : MonoBehaviour
     private void OpenInventory()
     {
         inventoryToShow.SetActive(true);
+        cursorToShow.SetActive(true);
         inventoryOn = true;
         inventoryCooldown = 300;
     }
@@ -90,6 +92,7 @@ public class MovePlayer : MonoBehaviour
     private void CloseInventory()
     {        
         inventoryOn = false;
+        cursorToShow.SetActive(false);
         inventoryToShow.SetActive(false);
         inventoryCooldown = 300;
     }

@@ -14,12 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 633823281235353856, guid: 49db11925dea24945970d89d0f3f90f0, type: 3}
   type: 0
-  description: This is Evidence for testing purposes, this description is also for
-    testing purposes, and the current game developer is also for testing purposes.
-    All purposes must test their purpose, here, at our purpose test! Call 1-800-PURPOSE
-    for you very own, very expensive, FREE CONSULTATION!!! (terms and services apply)
+  description: 'A folder containing evidence of Omega Corp''s continued disregard
+    for plastic waste management regulations. '
   canRead: 1
   canThrow: 0
   canEquip: 0
-  evidenceText: 'IDK I put all my effort into the description I guess heres a smiley
-    face:  :D'
+  evidenceText: No Text Available
