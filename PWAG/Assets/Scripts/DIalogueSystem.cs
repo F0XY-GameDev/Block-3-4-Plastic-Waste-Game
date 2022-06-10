@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class DIalogueSystem : MonoBehaviour
 {
+    public GameObject player;
+    private PlayerControlls playerControlls;
+    private PlayerInput playerInput;
+
     public Text nameText;
     public Text dialogueText;
 
@@ -24,6 +29,12 @@ public class DIalogueSystem : MonoBehaviour
 
     public GameObject NPC;
     public GameObject gameStateManager;
+
+    private void Awake()
+    {
+        playerControlls = player.GetComponent<characterMovement>().input;
+        playerInput = GetComponent<PlayerInput>();
+    }
 
     void Start()
     {

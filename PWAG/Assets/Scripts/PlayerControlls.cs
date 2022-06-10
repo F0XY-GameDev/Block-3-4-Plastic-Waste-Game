@@ -98,7 +98,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""c937496f-5afe-4b67-8896-7cb21fac6cd5"",
                     ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Controller"",
                     ""action"": ""Talk"",

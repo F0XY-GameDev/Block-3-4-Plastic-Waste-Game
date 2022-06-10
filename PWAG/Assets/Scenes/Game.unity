@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 2b6fe1c9b8c69f64ebdd985c88518532, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: f9c260b3b57993448ab7b32470e3c245, type: 2}
 --- !u!114 &5730646 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1032331751541978429, guid: 2107950bd1403fd458da4f0b0e8ab54f, type: 3}
@@ -366,9 +366,9 @@ MonoBehaviour:
   cursor: {fileID: 39882818}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 39882819}
   itemSlot: 3
 --- !u!222 &39882823
 CanvasRenderer:
@@ -1712,7 +1712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164725100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.72, y: -1.28, z: -8.78}
+  m_LocalPosition: {x: -7.36, y: -1.28, z: -11.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2547,6 +2547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211222763}
   - component: {fileID: 211222762}
+  - component: {fileID: 211222764}
   m_Layer: 0
   m_Name: DialogueSystem
   m_TagString: Untagged
@@ -2566,6 +2567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e8c1a4078479b4f8f8f4ccf5297166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1051191946}
   nameText: {fileID: 203171349}
   dialogueText: {fileID: 1255334650}
   dialogueUI: {fileID: 1551308530}
@@ -2596,6 +2598,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &211222764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211222761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: ae1bcc3e8f48c944db4606d60bd1cd3e, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Controlls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &211692102 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e2630b923f836de4b961a0565e32fe38, type: 3}
@@ -4081,9 +4113,9 @@ MonoBehaviour:
   cursor: {fileID: 277069604}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 277069605}
   itemSlot: 4
 --- !u!222 &277069609
 CanvasRenderer:
@@ -5725,7 +5757,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384918411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.491087, y: 2.4608355, z: 7.9349084}
+  m_LocalPosition: {x: 44.3, y: 1.52, z: 93.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5734,7 +5766,6 @@ Transform:
   - {fileID: 629676690}
   - {fileID: 955833151}
   - {fileID: 164725101}
-  - {fileID: 644694421}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6376,9 +6407,9 @@ MonoBehaviour:
   cursor: {fileID: 428178465}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 428178466}
   itemSlot: 5
 --- !u!222 &428178470
 CanvasRenderer:
@@ -6506,7 +6537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457980932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.1, y: -3.4953187, z: -1.4171689}
+  m_LocalPosition: {x: 60.7, y: -3.4953187, z: -1.4171689}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8684,7 +8715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629676689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.27, y: -1.28, z: -4.85}
+  m_LocalPosition: {x: -4.27, y: -1.28, z: 1.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8811,37 +8842,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d4616e01ffca64495e8a9359d516fd, type: 3}
   m_PrefabInstance: {fileID: 709194575}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &644694420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 644694421}
-  m_Layer: 0
-  m_Name: Waypoint (6)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &644694421
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644694420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.35, y: -1.28, z: -8.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 384918412}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &655786359 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 87647c0a1747a3441a44045fafc487dc, type: 3}
@@ -10986,9 +10986,9 @@ MonoBehaviour:
   cursor: {fileID: 835517612}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 835517613}
   itemSlot: 6
 --- !u!222 &835517617
 CanvasRenderer:
@@ -12838,7 +12838,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955833150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.11, y: -1.28, z: -9.39}
+  m_LocalPosition: {x: -10.72, y: -1.28, z: -4.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13296,7 +13296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77874ccdaa3f3974599f16100ba31b43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.21
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77874ccdaa3f3974599f16100ba31b43, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13304,7 +13304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77874ccdaa3f3974599f16100ba31b43, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 108.23
+      value: 109.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77874ccdaa3f3974599f16100ba31b43, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14912,7 +14912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117540749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.1, y: 1.63, z: 0.84}
+  m_LocalPosition: {x: 42.4, y: 1.63, z: 91.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14954,7 +14954,6 @@ MonoBehaviour:
   - {fileID: 629676690}
   - {fileID: 955833151}
   - {fileID: 164725101}
-  - {fileID: 644694421}
 --- !u!1 &1118980835 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1c2afa9a1b1bf1a48acc72404fa2c169, type: 3}
@@ -17659,9 +17658,9 @@ MonoBehaviour:
   cursor: {fileID: 1379698115}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 1379698116}
   itemSlot: 7
 --- !u!222 &1379698120
 CanvasRenderer:
@@ -18747,9 +18746,9 @@ MonoBehaviour:
   cursor: {fileID: 1455337648}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 1455337649}
   itemSlot: 10
 --- !u!222 &1455337653
 CanvasRenderer:
@@ -19320,7 +19319,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 87647c0a1747a3441a44045fafc487dc, type: 3}
       propertyPath: m_RootOrder
-      value: 70
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87647c0a1747a3441a44045fafc487dc, type: 3}
       propertyPath: m_LocalScale.x
@@ -19397,7 +19396,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3c56ca60028609549b3ed083c417e33e, type: 3}
       propertyPath: m_RootOrder
-      value: 72
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3c56ca60028609549b3ed083c417e33e, type: 3}
       propertyPath: m_LocalScale.x
@@ -20111,9 +20110,9 @@ MonoBehaviour:
   cursor: {fileID: 1553450941}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 1553450942}
   itemSlot: 11
 --- !u!222 &1553450946
 CanvasRenderer:
@@ -21326,6 +21325,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 664233214df3ada4ca49be1fd09b32e1, type: 3}
       propertyPath: m_Name
       value: Office_level_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 664233214df3ada4ca49be1fd09b32e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 664233214df3ada4ca49be1fd09b32e1, type: 3}
@@ -23222,7 +23225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772461653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.93, y: -1.28, z: -4.44}
+  m_LocalPosition: {x: -0.51, y: -1.28, z: -4.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23713,7 +23716,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828366572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.93, y: -1.28, z: -7.54}
+  m_LocalPosition: {x: -1.03, y: -1.28, z: -7.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24464,7 +24467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -6.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893051572
@@ -25638,9 +25641,9 @@ MonoBehaviour:
   cursor: {fileID: 1953039486}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 1953039487}
   itemSlot: 8
 --- !u!222 &1953039491
 CanvasRenderer:
@@ -25798,9 +25801,9 @@ MonoBehaviour:
   cursor: {fileID: 1966033561}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 1966033562}
   itemSlot: 9
 --- !u!222 &1966033566
 CanvasRenderer:
@@ -26916,7 +26919,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 87647c0a1747a3441a44045fafc487dc, type: 3}
       propertyPath: m_RootOrder
-      value: 71
+      value: 67
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 87647c0a1747a3441a44045fafc487dc, type: 3}
       propertyPath: m_LocalScale.x
@@ -28034,9 +28037,9 @@ MonoBehaviour:
   cursor: {fileID: 378661965941108019}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 378661965941108020}
   itemSlot: 2
 --- !u!222 &378661965941108024
 CanvasRenderer:
@@ -28361,7 +28364,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &836453290941612574
 Transform:
@@ -28817,7 +28820,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1944492391798030750, guid: 92ecc6729ab4d9c4f979b6a8a41a40c3, type: 3}
+  - {fileID: 2100000, guid: bfa33947662566b4a96955e17f4149b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29247,9 +29250,9 @@ MonoBehaviour:
   cursor: {fileID: 1847325571414283945}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 1847325571414283944}
   itemSlot: 0
 --- !u!222 &1847325571414283949
 CanvasRenderer:
@@ -30796,9 +30799,9 @@ MonoBehaviour:
   cursor: {fileID: 6486036038072792956}
   playerInventory: {fileID: 11400000, guid: 75f95298e6fc29d4bb0a38b233315189, type: 2}
   descUI: {fileID: 553134205}
-  inventoryOptions: {fileID: 0}
+  inventoryOptions: {fileID: 898402021}
   b: {fileID: 0}
-  itemSlotPos: {fileID: 0}
+  itemSlotPos: {fileID: 6486036038072792959}
   itemSlot: 1
 --- !u!114 &6486036038072792953
 MonoBehaviour:
@@ -31888,7 +31891,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1944492391798030750, guid: 92ecc6729ab4d9c4f979b6a8a41a40c3, type: 3}
+  - {fileID: 2100000, guid: bfa33947662566b4a96955e17f4149b5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
