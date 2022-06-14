@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ThrowableObject.cs" />
     <Compile Include="Assets\Scripts\Events.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemID.cs" />
+    <Compile Include="Assets\showOnButtonPress.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
