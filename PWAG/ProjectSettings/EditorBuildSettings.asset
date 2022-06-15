@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: 88922e79c5119b5439ae9b1f2d8d3be8
+  - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: af1a8151bc2670949819eeebb7834f97
+  - enabled: 1
+    path: Assets/Scenes/CameraRotateScene.unity
+    guid: d9934afea93bac84ea5672a7cfdf4313
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Demo Finished.unity
     guid: a32482e195e08f34bae7721fefe465f7
-  - enabled: 1
-    path: Assets/Scenes/CameraRotateScene.unity
-    guid: d9934afea93bac84ea5672a7cfdf4313
   m_configObjects: {}

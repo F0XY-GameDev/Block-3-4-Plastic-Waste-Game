@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Guard : MonoBehaviour
 {
+    private Animator animator;
     public NavMeshAgent navMeshAgent;               //  Nav mesh agent component
     public float startWaitTime = 4;                 //  Wait time of every action
     public float timeToRotate = 2;                  //  Wait time when the enemy detect near the player without seeing
@@ -34,6 +35,7 @@ public class Guard : MonoBehaviour
  
     void Start()
     {
+        animator = GetComponent<Animator>();
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
         m_CaughtPlayer = false;
@@ -66,6 +68,7 @@ public class Guard : MonoBehaviour
  
     private void Chasing()
     {
+        
         //  The enemy is chasing the player
         m_PlayerNear = false;                       //  Set false that hte player is near beacause the enemy already sees the player
         playerLastPosition = Vector3.zero;          //  Reset the player near position
@@ -99,11 +102,13 @@ public class Guard : MonoBehaviour
  
     private void Patroling()
     {
+        
         if (m_PlayerNear)
         {
             //  Check if the enemy detect near the player, so the enemy will move to that position
             if (m_TimeToRotate <= 0)
             {
+                
                 Move(speedWalk);
                 LookingPlayer(playerLastPosition);
             }
@@ -116,6 +121,7 @@ public class Guard : MonoBehaviour
         }
         else
         {
+            
             m_PlayerNear = false;           //  The player is no near when the enemy is platroling
             playerLastPosition = Vector3.zero;
             navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    //  Set the enemy destination to the next waypoint
@@ -127,9 +133,12 @@ public class Guard : MonoBehaviour
                     NextPoint();
                     Move(speedWalk);
                     m_WaitTime = startWaitTime;
+                    
+
                 }
                 else
                 {
+                    
                     Stop();
                     m_WaitTime -= Time.deltaTime;
                 }
@@ -144,18 +153,21 @@ public class Guard : MonoBehaviour
  
     public void NextPoint()
     {
+          
         m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints.Length;
         navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
     }
  
     void Stop()
     {
+        animator.SetTrigger("hasStopped");   
         navMeshAgent.isStopped = true;
         navMeshAgent.speed = 0;
     }
  
     void Move(float speed)
     {
+        animator.SetTrigger("hasStarted");
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speed;
     }

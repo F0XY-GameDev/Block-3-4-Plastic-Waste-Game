@@ -22,7 +22,7 @@ public class GameStateManager : MonoBehaviour
     {
         if (Q1Flags[1])
         {
-            StartCoroutine(ExecuteAfterTime(10));
+            StartCoroutine(ExecuteAfterTime(5));
         }
     }
 
@@ -30,7 +30,7 @@ public class GameStateManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
         // Code to execute after the delay
     }
 }
