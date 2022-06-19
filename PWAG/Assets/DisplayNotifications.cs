@@ -13,7 +13,7 @@ public class DisplayNotifications : MonoBehaviour
     public float currentOpacity;
     public float fadeSpeed;
     public float notifFadeTimer;
-    public float notifCooldown;
+    public float notifCooldown;    
 
     void Start()
     {
@@ -35,7 +35,11 @@ public class DisplayNotifications : MonoBehaviour
                 break;
 
             case 1:
-                notificationText.text = "You've picked up a " + _optionalItemName + " , you should go back to the blue worker!";
+                notificationText.text = "You've picked up a " + _optionalItemName + " , you should bring it back to Gus!";
+                break;
+
+            case 2:
+                notificationText.text = "Quest Progress made, check your journal by pressing Select!";                
                 break;
 
             default:

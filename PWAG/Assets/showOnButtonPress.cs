@@ -20,7 +20,7 @@ public class showOnButtonPress : MonoBehaviour
     void Update()
     {
         objectToShow.GetComponentInChildren<Image>().color = new Color(1.0f, 1.0f, 1.0f, currentOpacity);
-        if (Input.GetKeyDown("joystick button 1") && !isShowing)
+        if (Input.GetKeyDown("joystick button 6") && !isShowing)
         {
             currentOpacity = 1.0f;
         } 

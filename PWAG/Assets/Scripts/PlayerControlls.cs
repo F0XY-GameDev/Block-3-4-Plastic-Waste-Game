@@ -80,6 +80,15 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""ebf57f80-19f8-4423-91c1-627dfefa323b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -146,6 +155,17 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa2d31a8-dd83-43fa-9f2a-47f1c2cc8031"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -264,7 +284,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -275,7 +295,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -286,7 +306,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -297,7 +317,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -308,7 +328,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -319,7 +339,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -330,7 +350,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -341,7 +361,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -352,7 +372,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/dpad"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Gamepad"",
+                    ""groups"": ""Gamepad;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -374,7 +394,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Joystick"",
+                    ""groups"": ""Joystick;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -385,7 +405,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Joystick"",
+                    ""groups"": ""Joystick;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -396,7 +416,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/left"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Joystick"",
+                    ""groups"": ""Joystick;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -407,7 +427,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                     ""path"": ""<Joystick>/stick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Joystick"",
+                    ""groups"": ""Joystick;Controller"",
                     ""action"": ""Navigate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -728,6 +748,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         m_Controlls_Inventory = m_Controlls.FindAction("Inventory", throwIfNotFound: true);
         m_Controlls_Cursor = m_Controlls.FindAction("Cursor", throwIfNotFound: true);
         m_Controlls_Run = m_Controlls.FindAction("Run", throwIfNotFound: true);
+        m_Controlls_Menu = m_Controlls.FindAction("Menu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -805,6 +826,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Controlls_Inventory;
     private readonly InputAction m_Controlls_Cursor;
     private readonly InputAction m_Controlls_Run;
+    private readonly InputAction m_Controlls_Menu;
     public struct ControllsActions
     {
         private @PlayerControlls m_Wrapper;
@@ -815,6 +837,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         public InputAction @Inventory => m_Wrapper.m_Controlls_Inventory;
         public InputAction @Cursor => m_Wrapper.m_Controlls_Cursor;
         public InputAction @Run => m_Wrapper.m_Controlls_Run;
+        public InputAction @Menu => m_Wrapper.m_Controlls_Menu;
         public InputActionMap Get() { return m_Wrapper.m_Controlls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -842,6 +865,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Run.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnRun;
                 @Run.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnRun;
                 @Run.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnRun;
+                @Menu.started -= m_Wrapper.m_ControllsActionsCallbackInterface.OnMenu;
+                @Menu.performed -= m_Wrapper.m_ControllsActionsCallbackInterface.OnMenu;
+                @Menu.canceled -= m_Wrapper.m_ControllsActionsCallbackInterface.OnMenu;
             }
             m_Wrapper.m_ControllsActionsCallbackInterface = instance;
             if (instance != null)
@@ -864,6 +890,9 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
                 @Run.started += instance.OnRun;
                 @Run.performed += instance.OnRun;
                 @Run.canceled += instance.OnRun;
+                @Menu.started += instance.OnMenu;
+                @Menu.performed += instance.OnMenu;
+                @Menu.canceled += instance.OnMenu;
             }
         }
     }
@@ -990,6 +1019,7 @@ public partial class @PlayerControlls : IInputActionCollection2, IDisposable
         void OnInventory(InputAction.CallbackContext context);
         void OnCursor(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

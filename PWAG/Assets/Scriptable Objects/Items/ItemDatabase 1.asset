@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6c52cb71edbe549a5aa676d379d190, type: 3}
-  m_Name: ItemDatabase
-  m_EditorClassIdentifier: 
+  m_Script: {fileID: 0}
+  m_Name: ItemDatabase 1
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDataBaseObject
   Items:
   - {fileID: 11400000, guid: 9a28454a58697c54c911ba1e6ce2cf6c, type: 2}
   - {fileID: 11400000, guid: ebe338669ae5ea14fa1ee1e9dab779ec, type: 2}
@@ -20,20 +20,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a5ada3a7422b0e4ca94ae5d3779395f, type: 2}
   Descriptions:
   - This is an equipable... sort of.
-  - 'This Folder contains evidence of OmegaCorp ignoring plastic recycling guidelines. '
-  - This USB holds evidence of OmegaCorp dumping it's plastic production byproducts
-    in the river beside the Factory. Better not lose it!
+  - A folder containing evidence of Omega Corp's continued disregard for plastic
+    waste management regulations.
+  - A USB-Drive that holds Evidence of Omega Corp's improper plastic production byproduct
+    disposal.
   - This could be a lockpick at some point.
   - This could be a throwable at some point.
   Names:
   - Equipable
-  - File Folder
+  - 'File Folder '
   - USB-Drive
-  - Lockpick?
+  - Lockpick
   - Something throwable!
   Sprites:
-  - {fileID: 21300000, guid: 6bf87e834fe49b64d80777bb1edce27a, type: 3}
-  - {fileID: 21300000, guid: 10dd188bdc860284a8dae2eae5b6526a, type: 3}
   - {fileID: 21300000, guid: 25e9254ba3cfdf647acbe09c66db673f, type: 3}
-  - {fileID: 21300000, guid: 6bf87e834fe49b64d80777bb1edce27a, type: 3}
-  - {fileID: 21300000, guid: 6bf87e834fe49b64d80777bb1edce27a, type: 3}
+  - {fileID: 21300000, guid: 25e9254ba3cfdf647acbe09c66db673f, type: 3}
+  - {fileID: 21300000, guid: 25e9254ba3cfdf647acbe09c66db673f, type: 3}
+  - {fileID: 21300000, guid: 25e9254ba3cfdf647acbe09c66db673f, type: 3}
+  - {fileID: 21300000, guid: 25e9254ba3cfdf647acbe09c66db673f, type: 3}

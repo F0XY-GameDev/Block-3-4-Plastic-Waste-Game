@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     public GameObject inventoryToShow;
     public GameObject cursorToShow;
+    public GameObject menuToShow;
+    [SerializeField] private bool menuOn;
     [SerializeField] private bool inventoryOn;
     [SerializeField] private int inventoryCooldown;
 
@@ -36,20 +38,26 @@ public class Player : MonoBehaviour
             inventoryCooldown = 0;
         }
 
-        if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1)
-        {
-            Debug.Log("button press noticed");
-        }
-
         if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1 && inventoryOn && inventoryCooldown == 0) //if button defined by playerControlls is pressed and inventory open
         {
-            Debug.Log("button press noticed");
+            Debug.Log("start press noticed");
             CloseInventory();
         }
         if (playerControlls.Controlls.Inventory.ReadValue<float>() == 1 && !inventoryOn && inventoryCooldown == 0) //if button defined by playerControlls is pressed and inventory closed
         {
-            Debug.Log("button press noticed");
+            Debug.Log("start press noticed");
             OpenInventory();
+        }
+
+        if (playerControlls.Controlls.Menu.ReadValue<float>() == 1 && menuOn && inventoryCooldown == 0) //if button defined by playerControlls is pressed and inventory open
+        {
+            Debug.Log("select press noticed");
+            CloseMenu();
+        }
+        if (playerControlls.Controlls.Menu.ReadValue<float>() == 1 && !menuOn && inventoryCooldown == 0) //if button defined by playerControlls is pressed and inventory closed
+        {
+            Debug.Log("select press noticed");
+            OpenMenu();
         }
     }
 
@@ -57,6 +65,7 @@ public class Player : MonoBehaviour
     {
         var item = other.GetComponent<Item>(); //we get a component of the object collided with that tells us that it is an item
         var _notifSys = notifSys.GetComponent<DisplayNotifications>(); //we also setup reference to our notificationsystem
+        var isTrigger = other.GetComponent<isTrigger>();
         if (item) //if that component exists and is item
         {
             eventType = 0; //eventtype for notifsystem is 0 (item pickup)
@@ -70,7 +79,16 @@ public class Player : MonoBehaviour
             var _itemID = database.GetId[item.item]; //get itemID
             var _itemName = database.GetName[_itemID]; //get itemName (could be solved with more dictionaries, perhaps a more elegant solution exists
             _notifSys.ShowNotification(eventType, _itemName); //pass notifsystem values to the ShowNotification Method (in the DisplayNotification class attached to the notificationsystem)
+            return;
         }
+        if (isTrigger)
+        {
+            if (!isTrigger.hasTriggered)
+            _notifSys.ShowNotification(2);
+            isTrigger.hasTriggered = true;
+        }
+
+
     }
 
     private void OnApplicationQuit()
@@ -78,19 +96,45 @@ public class Player : MonoBehaviour
         inventory.Container.Clear(); //this clears the inventory after game ends, disable for testing.
     }
 
-    private void OpenInventory()
+    public void OpenInventory()
     {
+        if (menuOn) //if in menu
+        {
+            CloseMenu(); //close menu
+            return; //do not run rest of OpenInventory()
+        }
         inventoryToShow.SetActive(true);
         cursorToShow.SetActive(true);
         inventoryOn = true;
         inventoryCooldown = 300;
     }
 
-    private void CloseInventory()
+    public void CloseInventory()
     {
         inventoryOn = false;
         cursorToShow.SetActive(false);
         inventoryToShow.SetActive(false);
         inventoryCooldown = 300;
+    }
+
+    public void OpenMenu()
+    {
+        if (inventoryOn)
+        {
+            CloseInventory();
+            return;
+        }
+        menuToShow.SetActive(true);
+        menuOn = true;
+        inventoryCooldown = 300;
+        Time.timeScale = 0f;
+    }
+
+    public void CloseMenu()
+    {
+        menuOn = false;
+        menuToShow.SetActive(false);
+        inventoryCooldown = 300;
+        Time.timeScale = 1f;
     }
 }

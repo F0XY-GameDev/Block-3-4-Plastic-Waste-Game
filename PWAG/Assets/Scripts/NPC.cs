@@ -21,8 +21,10 @@ public class NPC : MonoBehaviour
     public string[] sentences3; // text for after quest1 completion
     public bool hasQuest;
     public int questID;
+    public bool questNotified;
 
     public GameObject gameStateManager;
+    public GameObject notificationSystem;
    
     void Start()
     {
@@ -66,6 +68,8 @@ public class NPC : MonoBehaviour
             {
                 dIalogueSystem.dialogueLines = sentences3;
                 gameStateManager.GetComponent<GameStateManager>().Q1Flags[1] = true;
+                var _notifSys = notificationSystem.GetComponent<DisplayNotifications>();
+                _notifSys.ShowNotification(2);
                 Debug.Log("Sentences3 selected");
             } else //if no other condition met
             {
@@ -75,9 +79,12 @@ public class NPC : MonoBehaviour
             FindObjectOfType<DIalogueSystem>().NPCName();
             Debug.Log("phase 2 complete");
             speechCD = 60;
-            if (hasQuest)
+            if (hasQuest && !questNotified)
             {
                 gameStateManager.GetComponent<GameStateManager>().Q1Flags[0] = true;
+                var _notifSys = notificationSystem.GetComponent<DisplayNotifications>();
+                _notifSys.ShowNotification(2);
+                questNotified = true;
             }
         }
     }

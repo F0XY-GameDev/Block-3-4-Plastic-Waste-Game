@@ -23,8 +23,9 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
                 return; //do not run more code from this function
             }
         }
+        Debug.Log("before container.add");
          //we do not need an if statement here because we return before this if the item is in the inventory, and the previous code does not fire if the item is not already in inventory       
-        Container.Add(new InventorySlot(database.GetId[_item],_item, _amount)); //create new item slot with _item and _amount
+        Container.Add(new InventorySlot(database.GetId[_item], _item, _amount)); //create new item slot with _item and _amount
         
     }
 
