@@ -5,7 +5,8 @@ public class Events : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Respawn");
+
     }
 
     public void QuitGame()

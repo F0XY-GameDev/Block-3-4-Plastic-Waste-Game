@@ -6,9 +6,13 @@ using UnityEngine.InputSystem;
 public class characterMovement : MonoBehaviour
 {
     Animator animator; //animator component
+    public RuntimeAnimatorController crouchActive;
+    public RuntimeAnimatorController normalActive;
 
     int isWalkingHash;
     int isRunningHash;
+    int isCrouchingHash;
+    int  hasStoppedHash;
 
     public PlayerControlls input;//reference to the Input System script
 
@@ -34,6 +38,7 @@ public class characterMovement : MonoBehaviour
 
         isWalkingHash = Animator.StringToHash("isWalking");
         isRunningHash = Animator.StringToHash("isRunning");
+        isCrouchingHash = Animator.StringToHash("isCrouching");
     }
 
     
@@ -41,8 +46,14 @@ public class characterMovement : MonoBehaviour
     {
         handleMovement();
         handleRotation();
+        
     }
 
+    void CrouchMode()
+    {
+        bool isCrouching= animator.GetBool(isCrouchingHash);
+        animator.SetTrigger(isCrouchingHash);
+    }
     void handleRotation()
     {
         //current position of our character
@@ -61,6 +72,8 @@ public class characterMovement : MonoBehaviour
     {
         bool isRunning = animator.GetBool(isRunningHash);
         bool isWalking = animator.GetBool(isWalkingHash);
+        bool isCrouching= animator.GetBool(isCrouchingHash);
+
 
         //start walking if movement pressed is true and already not walking
         if (movementPressed && !isWalking)
@@ -83,6 +96,19 @@ public class characterMovement : MonoBehaviour
         {
             animator.SetBool(isRunningHash, false);
         }
+        
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "CrouchSwitch")
+        {
+            animator.runtimeAnimatorController = crouchActive as RuntimeAnimatorController;
+        }
+        if(other.name =="NormalSwitch")
+        {
+            animator.runtimeAnimatorController = normalActive as RuntimeAnimatorController;
+        }
+
     }
 
     void OnEnable()

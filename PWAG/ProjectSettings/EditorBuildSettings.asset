@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Demo Finished.unity
     guid: a32482e195e08f34bae7721fefe465f7
+  - enabled: 1
+    path: Assets/Scenes/Respawn.unity
+    guid: 57948bf56560c624d82f28adcc106240
   m_configObjects: {}

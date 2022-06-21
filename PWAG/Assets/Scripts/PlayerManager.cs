@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static Vector3 checkpointPos;
 
      public static bool gameOver;
     public GameObject Caught;//referencing the game over object
